@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="#">
+    <link rel="icon" href="images/icon-book.png">
     <title>Registro Personal de Libros</title>
 </head>
 
@@ -30,38 +30,71 @@
             </div>
 
             <div>
-                <form action="#" id="bookForm">
-                    <label>Libro</label>
-                    <input type="text" id="title" placeholder="Título del libro">
+                <form id="bookForm">
+                    <label>Título</label>
+                    <input type="text" id="title" name="title" placeholder="Título">
                     <label>Autor</label>
-                    <input type="text" id="author" placeholder="Nombre del autor">
-                    <label>Condición</label>
+                    <input type="text" id="author" name="author" placeholder="Autor">
+                    <label>Comentario</label>
+                    <input type="text" id="comment" name="comment" placeholder="Comentario">
+                    <!-- <label>Estado</label>
                     <select>
                         <option value="new">Nuevo</option>
                         <option value="reading">Leyendo</option>
                         <option value="done">Terminado</option>
-                    </select>
-
-                    <input type="submit" id="btnSave" value="Guardar">
+                    </select> -->
+                    <input type="button" id="btn" value="Submit" onclick="clicksubmit()">
                 </form>
             </div>
+                <div id="msg"></div>
+          
 
-            <h1>Mis Libros</h1>
-            <div class="container">
-                <div class="infoBook" id="infoBook">
+           
+
+            <fieldset>
+            
+                <legend>
+
+            <h2>&#128210; Mis Libros &#128210;</h2>
+        </legend>
+
+        <table id="table">
+
+            <tr>
+                <td class=".col">
+                    Title 
+                </td>
+                <td class=".col">
+                    Author 
+                </td>
+                <td class=".col">
+                    Comment 
+                </td>
+                <td class=".col">
+                    Edit/Delete 
+                </td>
+            </tr>
+            </table>
+
+        </fieldset>
+
+
+            <!-- <div class="container">
+                <div class="infoBook" id="bookInfo">
                     <p>Libro número uno</p>
                     <button>Editar</button>
                     <button>Borrar</button>
                 </div>
-                <div class="infoBook" id="infoBook">
+                <div class="infoBook" id="bookInfo">
 
                 </div>
-                <div class="infoBook" id="infoBook">
+                <div class="infoBook" id="bookInfo">
 
                 </div>
-            </div>
+            </div> -->
 
-        </div>
+
+
         </div>
 
     </main>
@@ -73,7 +106,7 @@
         <p>Footer</p>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
