@@ -1,0 +1,122 @@
+body {
+    background: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .navbar {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.574);
+      overflow: auto;
+      border-radius: 10px;
+    }
+    
+    .navbar a {
+      float: left;
+      padding: 20px;
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .navbar a:hover {
+      background-color: rgb(212, 122, 242);
+    }
+    
+    .active {
+      background-color: #dee66b;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .navbar a {
+        float: none;
+        display: block;
+      }
+    }
+    
+    .panel {
+      padding: 50px;
+      margin: 50px;
+      background-color: rgba(240, 248, 255, 0.506);
+      border-radius: 10px;
+    }
+    
+    @media only screen and (max-width: 768px) {
+      .panel {
+        padding: 0px;
+        margin: 0px;
+        margin-bottom: 20px;
+      }
+    }
+    
+    input[type=text], select {
+      width: 100%;
+      padding: 20px;
+      margin: 8px;
+      display: inline-block;
+      background-color: rgb(212, 122, 242);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type=submit] {
+      background-color: #dee66b;
+      color: white;
+      padding: 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: rgb(114, 59, 133);
+    }
+    
+    @media only screen and (max-width: 768px) {
+      .panel input[type=text],
+      select {
+        width: 95%;
+        display: block;
+      }
+    }
+    
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      background-color: #fcaeff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    @media only screen and (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+    }
+    
+    .infoBook {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      margin: 10px;
+      border: 3px solid rgb(255, 255, 255);
+      text-align: center;
+      font-size: 30px;
+      border-radius: 10px;
+    }
+    
+    @media only screen and (max-width: 768px) {
+      .container .infoBook {
+        font-size: 25px;
+      }
+    }
+    
+    footer {
+      padding: 10px;
+      background-color: rgba(255, 0, 0, 0.314);
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+    }

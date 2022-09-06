@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="#">
+    <title>Registro Personal de Libros</title>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <a class="active" href="#">Inicio</a>
+            <a href="#">Noticias</a>
+            <a href="#">Preguntas</a>
+            <a href="#">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="panel">
+            <div>
+                <h1>Registro Personal de Libros</h1>
+            </div>
+            <div>
+                <h2>Añadir nuevo libro</h2>
+            </div>
+
+            <div>
+                <form action="#" id="bookForm">
+                    <label>Libro</label>
+                    <input type="text" id="title" placeholder="Título del libro">
+                    <label>Autor</label>
+                    <input type="text" id="author" placeholder="Nombre del autor">
+                    <label>Condición</label>
+                    <select>
+                        <option value="new">Nuevo</option>
+                        <option value="reading">Leyendo</option>
+                        <option value="done">Terminado</option>
+                    </select>
+
+                    <input type="submit" id="btnSave" value="Guardar">
+                </form>
+            </div>
+
+            <h1>Mis Libros</h1>
+            <div class="container">
+                <div class="infoBook" id="infoBook">
+                    <p>Libro número uno</p>
+                    <button>Editar</button>
+                    <button>Borrar</button>
+                </div>
+                <div class="infoBook" id="infoBook">
+
+                </div>
+                <div class="infoBook" id="infoBook">
+
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+    </main>
+
+    <section>
+    </section>
+
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
