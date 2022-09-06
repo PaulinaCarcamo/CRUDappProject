@@ -1,11 +1,19 @@
 // CRUD operations
 
 //Global variables
+var row = null;
 
 function clicksubmit() {
     var dataEntered = retrieveData();
     var readData = readingDataFromLocalStorage(dataEntered);
-    insert(readData)
+    if(row == null){
+        insert(readData);
+        msg.innerHTML = "Data Inserted!"
+    }
+    else{
+        update();
+        msg.innerHTML = "Data Updated!"
+    }
 
 }
 
@@ -35,7 +43,7 @@ var c = localStorage.setItem("comment", dataEntered[2]);
 //Getting values from local to table
 
 var t1 = localStorage.getItem("title", t);
-var a1 = localStorage.getItem("title", a);
+var a1 = localStorage.getItem("author", a);
 var c1 = localStorage.getItem("comment", c);
 
 var arr = [t1, a1, c1];
@@ -49,5 +57,24 @@ function insert(readData) {
     row.insertCell(0).innerHTML = readData[0];
     row.insertCell(1).innerHTML = readData[1];
     row.insertCell(2).innerHTML = readData[2];
-    row.insertCell(3).innerHTML = `<button onclick = edit(this)>Editar</button><button onclick = remove(this)>Borrar</button>`;
+    row.insertCell(3).innerHTML = `<button onclick = edit(this)>Editar</button>`;
 }
+
+//EDIT
+function edit(td) {
+    row = td.parentElement.parentElement;
+    document.getElementById("title").value = row.cells[0].innerHTML;
+    document.getElementById("author").value = row.cells[1].innerHTML;
+    document.getElementById("comment").value = row.cells[2].innerHTML;
+
+}
+
+//UPDATE
+function update() {
+    row.cells[0].innerHTML = document.getElementById("title").value;
+    row.cells[1].innerHTML = document.getElementById("author").value;
+    row.cells[2].innerHTML = document.getElementById("comment").value;
+    row = null;
+}
+
+//DELETE
