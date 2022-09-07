@@ -1,145 +1,175 @@
 body {
     background: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
-    .navbar {
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.574);
-      overflow: auto;
-      border-radius: 10px;
-    }
-    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.574);
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.navbar a {
+    float: left;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: rgb(212, 122, 242);
+}
+
+.active {
+    background-color: #dee66b;
+}
+
+@media screen and (max-width: 768px) {
     .navbar a {
-      float: left;
-      padding: 20px;
-      color: rgb(0, 0, 0);
-      text-decoration: none;
-      font-size: 17px;
-    }
-    
-    .navbar a:hover {
-      background-color: rgb(212, 122, 242);
-    }
-    
-    .active {
-      background-color: #dee66b;
-    }
-    
-    @media screen and (max-width: 768px) {
-      .navbar a {
         float: none;
         display: block;
-      }
     }
-    
+}
+
+.panel {
+    padding: 50px;
+    margin: 50px;
+    background-color: rgba(240, 248, 255, 0.506);
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
     .panel {
-      padding: 50px;
-      margin: 50px;
-      background-color: rgba(240, 248, 255, 0.506);
-      border-radius: 10px;
-    }
-    
-    @media only screen and (max-width: 768px) {
-      .panel {
         padding: 0px;
         margin: 0px;
         margin-bottom: 20px;
-      }
     }
-    
-    input[type=text], select {
-      width: 100%;
-      padding: 20px;
-      margin: 8px;
-      display: inline-block;
-      background-color: rgb(212, 122, 242);
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    
-    input[type=button] {
-      background-color: #dee66b;
-      color: white;
-      padding: 20px;
-      margin: 10px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    input[type=button]:hover {
-      background-color: rgb(114, 59, 133);
-    }
-    
-    @media only screen and (max-width: 768px) {
-      .panel input[type=text],
-      select {
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 20px;
+    margin: 8px;
+    display: inline-block;
+    background-color: rgba(212, 122, 242, 0.552);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=button] {
+    background-color: #dee66b;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=button]:hover {
+    background-color: rgb(114, 59, 133);
+}
+
+@media only screen and (max-width: 768px) {
+
+    .panel input[type=text],
+    select {
         width: 95%;
         display: block;
-      }
     }
-    
-    /* .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 20px;
-      background-color: #fcaeff;
-      padding: 20px;
-      border-radius: 10px;
-    } */
+}
 
-    fieldset {
-        text-align: center;
-        border-radius: 10px;
-        border: 3px solid rgb(255, 255, 255);
-    }
+fieldset {
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid rgb(255, 255, 255);
+}
+
+table {
+    width: 98%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid rgb(219, 217, 217);
+    font-size: 30px;
+    border-radius: 10px;
+    table-layout: fixed;
+}
+
+td {
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 760px),
+(max-width: 768px) and (max-width: 1024px) {
 
     table {
-        width: 98%;
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 10px;
-        margin: 10px;
-        border: 3px solid rgb(255, 255, 255);
-        font-size: 30px;
-        border-radius: 10px;    
+        margin-left: 0px;
+        padding-right: 0px;
     }
 
-    @media only screen and (max-width: 768px) {
-        table {
-            width: 95%;
-            font-size: 15px;
-        }
-      }
-    
-    /* @media only screen and (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-        gap: 5px;
-      }
-    } */
-    
-    .infoBook {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 10px;
-      margin: 10px;
-      border: 3px solid rgb(255, 255, 255);
-      text-align: center;
-      font-size: 30px;
-      border-radius: 10px;
+    /* Force table to not be like tables anymore */
+    td,
+    tr {
+        display: block;
+        text-align: left;
+
     }
-    
-    @media only screen and (max-width: 768px) {
-      .container .infoBook {
-        font-size: 25px;
-      }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .col {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
     }
-    
-    footer {
-      padding: 10px;
-      background-color: rgba(255, 0, 0, 0.314);
-      color: white;
-      text-align: center;
-      border-radius: 10px;
+
+    /* tr { 
+        border: 1px solid #ccc; } */
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+
     }
+
+    td:before {
+        /* Like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    /* Label data */
+
+    td:nth-of-type(1):before {
+        content: "Título";
+    }
+
+    td:nth-of-type(2):before {
+        content: "Autor";
+    }
+
+    td:nth-of-type(3):before {
+        content: "Comentario";
+    }
+
+}
+
+footer {
+    padding: 10px;
+    background-color: rgba(255, 0, 0, 0.314);
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}

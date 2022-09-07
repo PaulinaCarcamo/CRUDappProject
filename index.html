@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/icon-book.png">
+    <link rel="icon" href="/images/booksicon.png">
     <title>Registro Personal de Libros</title>
 </head>
 
@@ -32,11 +32,11 @@
             <div>
                 <form id="bookForm">
                     <label>Título</label>
-                    <input type="text" id="title" name="title" placeholder="Título">
+                    <input type="text" id="title" name="title" placeholder="Condorito">
                     <label>Autor</label>
-                    <input type="text" id="author" name="author" placeholder="Autor">
+                    <input type="text" id="author" name="author" placeholder="Pepo">
                     <label>Comentario</label>
-                    <input type="text" id="comment" name="comment" placeholder="Comentario">
+                    <input type="text" id="comment" name="comment" placeholder="Leyendo">
                     <!-- <label>Estado</label>
                     <select>
                         <option value="new">Nuevo</option>
@@ -46,57 +46,25 @@
                     <input type="button" id="btn" value="Submit" onclick="clicksubmit()">
                 </form>
             </div>
-                <div id="msg"></div>
-          
 
-           
+            <div id="msg"></div>
 
             <fieldset>
-            
                 <legend>
+                    <h2>&#128210; Mis Libros &#128210;</h2>
+                </legend>
 
-            <h2>&#128210; Mis Libros &#128210;</h2>
-        </legend>
-
-        <table id="table">
-
-            <tr>
-                <td class=".col">
-                    Title 
-                </td>
-                <td class=".col">
-                    Author 
-                </td>
-                <td class=".col">
-                    Comment 
-                </td>
-                <td class=".col">
-                    Edit/Delete 
-                </td>
-            </tr>
-            </table>
-
-        </fieldset>
-
-
-            <!-- <div class="container">
-                <div class="infoBook" id="bookInfo">
-                    <p>Libro número uno</p>
-                    <button>Editar</button>
-                    <button>Borrar</button>
-                </div>
-                <div class="infoBook" id="bookInfo">
-
-                </div>
-                <div class="infoBook" id="bookInfo">
-
-                </div>
-            </div> -->
-
-
+                <table id="table">
+                    <tr>
+                        <td class="col">Título</td>
+                        <td class="col">Autor</td>
+                        <td class="col">Comentario</td>
+                        <td class="col"></td>
+                    </tr>
+                </table>
+            </fieldset>
 
         </div>
-
     </main>
 
     <section>
