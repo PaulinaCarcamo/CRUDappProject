@@ -1,11 +1,32 @@
 body {
-    background: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
+    background: linear-gradient(-45deg, #4A4453, #B0A8BA, #7B7485, #BEA6A1);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Animated gradient */
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Navbar */
+
 .navbar {
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.574);
+    background-color: rgba(255, 255, 255, 0.502);
     overflow: auto;
     border-radius: 10px;
 }
@@ -14,145 +35,286 @@ body {
     float: left;
     padding: 20px;
     color: rgb(0, 0, 0);
+    font-size: 15px;
     text-decoration: none;
-    font-size: 17px;
 }
 
 .navbar a:hover {
-    background-color: rgb(212, 122, 242);
+    color: rgb(225, 225, 225);
+    transition: 0.3s;
 }
 
 .active {
-    background-color: #dee66b;
+    background-color: rgba(160, 160, 160, 0.502);
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 600px),
+(max-width: 768px),
+(max-width: 992px) {
     .navbar a {
         float: none;
         display: block;
+        padding: 15px;
     }
 }
+
+/* Website logo */
+
+.navbar .logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 600px),
+(max-width: 768px),
+(max-width: 992px) {
+    .navbar .logo {
+        top: 5px;
+    }
+}
+
+/* Aside element: Book information */
+
+.aside {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.aside span {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+@media only screen and (max-width: 600px),
+(max-width: 768px),
+(max-width: 992px) {
+    .aside {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 600px),
+(max-width: 768px),
+(max-width: 992px) {
+    .aside span {
+        display: block;
+
+
+    }
+}
+
+.aside img {
+    width: 12%;
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px),
+(max-width: 768px),
+(max-width: 992px) {
+    .aside img {
+        width: 120px;
+        float: none;
+        display: block;
+        margin: auto;
+    }
+}
+
+/* Panel: Book form and cards */
 
 .panel {
-    padding: 50px;
-    margin: 50px;
     background-color: rgba(240, 248, 255, 0.506);
-    border-radius: 10px;
+    padding: 50px;
+    margin: 20px;
+    border-radius: 25px;
 }
 
-@media only screen and (max-width: 768px) {
+.panel h1, h2 {
+    text-indent: 30px;
+    text-shadow: 2px 2px 2px rgb(255, 255, 255);
+}
+
+.panel h3 {
+    margin-top: 0px;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 600px),
+(max-width: 768px),
+(max-width: 992px) {
     .panel {
-        padding: 0px;
+        padding: 10px 0px 0px 0px;
         margin: 0px;
-        margin-bottom: 20px;
     }
 }
 
-input[type=text],
-select {
-    width: 100%;
-    padding: 20px;
-    margin: 8px;
-    display: inline-block;
-    background-color: rgba(212, 122, 242, 0.552);
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+@media only screen and (max-width: 600px) {
+    .panel h1 {
+        font-size: 25px;
+    }
 }
 
-input[type=button] {
-    background-color: #dee66b;
-    color: white;
+/* Form: Title, author, comment */
+
+.form {
+    padding: 0px 80px 0px 20px;
+}
+
+.form .label {
+    margin-left: 15px;
+    text-shadow: 2px 2px 4px rgb(255, 255, 255);
+}
+
+input {
+    width: 100%;
     padding: 20px;
     margin: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    box-sizing: content-box;
+}
+
+/* Button: Save */
+
+.saveBtn {
+    background-color: rgba(160, 160, 160, 0.5);
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    margin: 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
-input[type=button]:hover {
-    background-color: rgb(114, 59, 133);
+/* Message: "Datos incompletos", "Libro agregado" */
+
+.msg {
+    background-color: rgba(255, 203, 112, 0.5);
+    margin-left: 40px;
 }
 
-@media only screen and (max-width: 768px) {
+/* Books board: Separated cards per book added */
 
-    .panel input[type=text],
-    select {
-        width: 95%;
+.container {
+    text-align: center;
+    padding-bottom: 2px;
+}
+
+/* Books added */
+
+.card {
+    /* background-color: rgb(255, 255, 255); */
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
         display: block;
     }
 }
 
-fieldset {
-    text-align: center;
-    border-radius: 10px;
-    border: 3px solid rgb(255, 255, 255);
+@media only screen and (max-width: 768px),
+(max-width: 992px) {
+    .card {
+        grid-template-columns: 50% 50%;
+    }
 }
 
-table {
-    width: 98%;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
+.card div {
+    background-color: white;
+    border-radius: 20px;
     margin: 10px;
-    border: 3px solid rgb(219, 217, 217);
-    font-size: 30px;
-    border-radius: 10px;
+    padding: 10px 5px 5px 5px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s;
+}
+
+.card div:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.01);
+}
+
+@media only screen and (max-width: 600px),
+(max-width: 768px) {
+    .card div {
+        margin: 0px 0px 20px 0px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .card div {
+        margin: 20px 10px 20px 10px;
+    }
+}
+
+/* table {
+    width: 98%;
     table-layout: fixed;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0px 0px 20px 10px;
+    border-radius: 10px;
+    border-spacing: 0px 15px;
 }
 
 td {
-    font-size: 20px;
-}
+    font-size: 18px;
+} */
 
-@media only screen and (max-width: 760px),
-(max-width: 768px) and (max-width: 1024px) {
+
+/* Responsive table */
+
+/* @media only screen and (max-width: 600px),
+(max-width: 768px) and (max-width: 992px) {
 
     table {
-        margin-left: 0px;
-        padding-right: 0px;
-    }
+        width: 100%;
+        margin: 0px;
+    } */
 
-    /* Force table to not be like tables anymore */
-    td,
-    tr {
-        display: block;
-        text-align: left;
-
-    }
-
-    /* Hide table headers (but not display: none;, for accessibility) */
-    .col {
+/* Table headers hidden, for accesibility */
+/* .col {
         position: absolute;
         top: -9999px;
         left: -9999px;
     }
 
-    /* tr { 
-        border: 1px solid #ccc; } */
+    tr {
+        display: block;
+        text-align: left;
+    } 
 
     td {
-        /* Behave  like a "row" */
+        display: block;
+        text-align: left;
         border: none;
-        border-bottom: 1px solid #eee;
         position: relative;
         padding-left: 50%;
-
     }
 
     td:before {
-        /* Like a table header */
         position: absolute;
-        /* Top/left values mimic padding */
-        top: 6px;
-        left: 6px;
-        width: 45%;
+        top: 10px;
+        left: 20px;
         padding-right: 10px;
         white-space: nowrap;
-    }
+    } */
 
-    /* Label data */
+/* Label data: Title, author, comment */
 
-    td:nth-of-type(1):before {
+/* td:nth-of-type(1):before {
         content: "Título";
     }
 
@@ -164,12 +326,120 @@ td {
         content: "Comentario";
     }
 
+    td:nth-of-type(4):before {
+        content: none;
+    }
+
+} */
+
+/* Buttons edit and delete */
+
+button {
+    background-color: rgba(160, 160, 160, 0.5);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-footer {
-    padding: 10px;
-    background-color: rgba(255, 0, 0, 0.314);
-    color: white;
+button:hover {
+    background-color: rgb(225, 225, 225);
+}
+
+/* Modal: "Continue" message when deleting elements */
+
+.modal{
     text-align: center;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 0 50px rgb(0, 0, 0);
+    padding: 30px;
+}
+
+.modal button {
+    background-color: rgb(255, 164, 135);
+}
+
+/* Footer section */
+
+footer {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+    padding: 10px 0px 25px 0px;
     border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Footer links (for more information) */
+
+.moreinfo a {
+    margin: 0px 5px 0px 5px;
+    text-decoration: none;
+    color: rgb(120, 120, 120);
+}
+
+.moreinfo a:hover {
+    color: rgb(225, 225, 225);
+    transition: 0.3s;
+}
+
+@media only screen and (max-width: 600px),
+(max-width: 768px),
+(max-width: 992px) {
+    .moreinfo a {
+        display: block;
+        padding: 5px;
+    }
+}
+
+.moreinfo .inactive {
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 600px),
+(max-width: 768px),
+(max-width: 992px) {
+    .moreinfo .inactive {
+        display: none;
+    }
+}
+
+/* Social media */
+
+.fa {
+    width: 15px;
+    padding: 20px;
+    margin: 10px 5px 20px 0px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.fa-twitter {
+    background: rgb(85, 172, 238);
+    color: rgb(255, 255, 255);
+}
+
+.fa-linkedin {
+    background: rgb(0, 123, 181);
+    color: rgb(255, 255, 255);
+}
+
+.fa-facebook {
+    background: rgb(59, 89, 152);
+    color: rgb(255, 255, 255);
+}
+
+.fa-instagram {
+    background: rgb(18, 86, 136);
+    color: rgb(255, 255, 255);
 }

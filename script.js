@@ -9,26 +9,30 @@ let author = document.getElementById("author");
 let comment = document.getElementById("comment");
 let msg = document.getElementById("msg");
 let card = document.getElementById("card");
+// let add = document.getElementById("add");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     formValidation();
 });
 
+// Validation messages
+
 let formValidation = () => {
     if (title.value === "" || author.value === "") {
         console.log("failure");
         msg.innerHTML = "¡Datos incompletos!";
-
     } else {
         console.log("success");
         msg.innerHTML = "¡Libro agregado!";
         acceptData();
+
     }
 
     setTimeout(() => msg.innerHTML = "", 5000)
 };
 
+//Create and read: 
 //Adding new books by title, author and comment
 
 let data = [{}];
@@ -67,108 +71,56 @@ let createBook = () => {
 };
 
 
+// Delete books's information
 
-// var row = null;
+let deleteBook = (e) => {
 
-// function clicksubmit() {
-//     var dataEntered = retrieveData();
-//     var readData = readingDataFromLocalStorage(dataEntered);
+    let modal = document.getElementById('modal');
+    let closeModal = document.getElementById('close-button');
 
-//     // saveDataInLS(dataEntered)
+    e.parentElement.parentElement.remove();
+    data.splice(e.parentElement.parentElement.id, 1);
+    localStorage.setItem("data", JSON.stringify(data));
+    console.log(data);
 
-//     if (dataEntered == false) {
-//         msg.innerHTML = "¡Datos incompletos!"
-//     }
-//     else {
-//         if (row == null) {
-//             insert(readData);
-//             msg.innerHTML = "¡Libro agregado!"
-//         }
-//         else {
-//             update();
-//             msg.innerHTML = "¡Libro actualizado!"
-//         }
+    // msgconfirm.innerHTML = "LIBRO ELIMINADO"
+    // setTimeout(() => msgconfirm.innerHTML = "", 5000)
 
-//     }
+    modal.showModal();
 
-//     setTimeout(() => msg.innerHTML = "", 8000)
-// }
-
-// // document.getElementById("bookForm").reset();
+    closeModal.addEventListener('click', () => {
+        modal.close();
+    
+        })
+};
 
 
-// //CREATE
-// //Retrieving data from Form
+//Update book's information
 
-// function retrieveData() {
-//     var title = document.getElementById("title").value;
-//     var author = document.getElementById("author").value;
-//     var comment = document.getElementById("comment").value;
+let editBook = (e) => {
+    let selectedBook = e.parentElement.parentElement;
 
-//     var arr = [title, author, comment];
-//     if (arr.includes("")) {
-//         return false;
-//     } else {
-//         return arr;
-//     }
-// }
+    title.value = selectedBook.children[0].innerHTML;
+    author.value = selectedBook.children[1].innerHTML;
+    comment.value = selectedBook.children[2].innerHTML;
 
-// READ
+    // deleteBook(e);
 
+    e.parentElement.parentElement.remove();
+    data.splice(e.parentElement.parentElement.id, 1);
 
-// function readingDataFromLocalStorage(dataEntered) {
+};
 
-//     //Storing data in local storage
+//Clear form
 
-//     var t = localStorage.setItem("title", dataEntered[0]);
-//     var a = localStorage.setItem("author", dataEntered[1]);
-//     var c = localStorage.setItem("comment", dataEntered[2]);
+let resetForm = () => {
+    title.value = "";
+    comment.value = "";
+    author.value = "";
+};
 
-//     //Getting values from local to table
-
-//     var t1 = localStorage.getItem("title", t);
-//     var a1 = localStorage.getItem("author", a);
-//     var c1 = localStorage.getItem("comment", c);
-
-//     var arr = [t1, a1, c1];
-//     return arr;
-
-
-//     //INSERT
-
-//     function insert(readData) {
-//         var row = table.insertRow();
-//         row.insertCell(0).innerHTML = readData[0];
-//         row.insertCell(1).innerHTML = readData[1];
-//         row.insertCell(2).innerHTML = readData[2];
-//         row.insertCell(3).innerHTML = `<button onclick = edit(this)>Editar</button>
-//                                     <button onclick = remove(this)>Borrar</button>`;
-//     }
-
-//     //EDIT
-//     function edit(td) {
-//         row = td.parentElement.parentElement;
-//         document.getElementById("title").value = row.cells[0].innerHTML;
-//         document.getElementById("author").value = row.cells[1].innerHTML;
-//         document.getElementById("comment").value = row.cells[2].innerHTML;
-
-//     }
-
-//     //UPDATE
-//     function update() {
-//         row.cells[0].innerHTML = document.getElementById("title").value;
-//         row.cells[1].innerHTML = document.getElementById("author").value;
-//         row.cells[2].innerHTML = document.getElementById("comment").value;
-//         row = null;
-//     }
-
-//     // DELETE
-//     function remove(td) {
-//         // var answer = confirm("Are you sure you want to delete this record?")
-//         // if (answer == true) {
-
-//         row = td.parentElement.parentElement;
-//         document.getElementById("table").deleteRow(row.rowIndex);
-
-//     }
-// }
+(() => {
+    data = JSON.parse(localStorage.getItem("data")) || []
+    console.log(data);
+    createBook();
+})();

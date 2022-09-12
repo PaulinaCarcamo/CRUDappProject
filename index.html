@@ -6,72 +6,111 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="/images/booksicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="/images/iconowl.png">
     <title>Registro Personal de Libros</title>
 </head>
 
 <body>
     <header>
         <div class="navbar">
-            <a class="active" href="#">Inicio</a>
-            <a href="#">Noticias</a>
-            <a href="#">Preguntas</a>
-            <a href="#">Contacto</a>
+            <a class="active" href="#">Iniciar Sesión</a>
+            <a href="#">Recomendados</a>
+            <a href="#">Categorías</a>
+            <a href="#">Blog</a>
+            <span class="logo">&#129417;</span>
+        </div>
+
+        <div class="aside">
+            <img src="/images/blackcat.jpg" alt="image">
+            <p>
+                <span><b>El Gato Negro</b></span>
+                <i>Edgar Allan Poe</i>
+            </p>
+            <p>
+                El protagonista es un hombre dócil y bondadoso, le gustaban mucho los animales al igual que a su esposa,
+                lleva una vida hogareña, apacible con su gato llamado Plutón, hasta que el joven empieza a dejarse
+                arrastrar por la bebida. El alcohol lo vuelve irascible y en uno de sus accesos de furia acaba con la
+                vida del animal después de arrancarle un ojo con una cuchara.
+            </p>
         </div>
     </header>
 
     <main>
         <div class="panel">
+            <h1>Diario del Lector</h1>
+            <h2>Añadir nuevo libro</h2>
             <div>
-                <h1>Registro Personal de Libros</h1>
-            </div>
-            <div>
-                <h2>Añadir nuevo libro</h2>
-            </div>
-
-            <div>
-                <form id="bookForm">
-                    <label>Título</label>
+                <form id="form" class="form">
+                    <label class="label" for="title">Título</label>
                     <input type="text" id="title" name="title" placeholder="Condorito">
-                    <label>Autor</label>
+
+                    <label class="label" for="author">Autor</label>
                     <input type="text" id="author" name="author" placeholder="Pepo">
-                    <label>Comentario</label>
+
+                    <label class="label" for="comment">Comentario</label>
                     <input type="text" id="comment" name="comment" placeholder="Leyendo">
-                    <!-- <label>Estado</label>
-                    <select>
-                        <option value="new">Nuevo</option>
-                        <option value="reading">Leyendo</option>
-                        <option value="done">Terminado</option>
-                    </select> -->
-                    <input type="button" id="btn" value="Submit" onclick="clicksubmit()">
+
+                    <button type="submit" id="add" class="saveBtn">Guardar</button>
+
                 </form>
             </div>
 
-            <div id="msg"></div>
+            <i id="msg" class="msg"></i>
+            <i id="msgconfirm" class="msgconfirm"></i>
 
-            <fieldset>
-                <legend>
-                    <h2>&#128210; Mis Libros &#128210;</h2>
-                </legend>
+            <h3>&#x1F538; Mis Libros &#x1F538;</h3>
 
-                <table id="table">
+            <div class="container">
+                <div id="card" class="card">
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+
+            <dialog class="modal" id="modal">
+                <p>¡Se ha eliminado el elemento seleccionado!</p>
+                <button class="button" id="close-button">Continuar</button>
+            </dialog>
+
+            <!-- <table id="table">
                     <tr>
-                        <td class="col">Título</td>
-                        <td class="col">Autor</td>
-                        <td class="col">Comentario</td>
-                        <td class="col"></td>
+                        <td class="col">
+                            <h5>Título</h5>
+                        </td>
+                        <td class="col">
+                            <h5>Autor</h5>
+                        </td>
+                        <td class="col">
+                            <h5>Comentario</h5>
+                        </td>
+                        <td class="col">
+                            <h5>Actualizar</h5>
+                        </td>
                     </tr>
-                </table>
-            </fieldset>
+                </table> -->
 
-        </div>
     </main>
-
-    <section>
-    </section>
-
     <footer>
-        <p>Footer</p>
+        <div>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+        </div>
+
+        <div class="moreinfo">
+            <a href="#">Lleva un seguimiento de tus libros</a>
+            <a href="#" class="inactive">|</a>
+            <a href="#">Planifica tu horario de lectura</a>
+            <a href="#" class="inactive">|</a>
+            <a href="#">Toma notas eficientes de lo que lees</a>
+            <a href="#" class="inactive">|</a>
+            <a href="#">Organiza tu lista de libros</a>
+            <a href="#" class="inactive">|</a>
+            <a href="#">Descubre consejos para tu lectura</a>
+        </div>
     </footer>
 
     <script src="script.js"></script>
