@@ -9,14 +9,13 @@ let author = document.getElementById("author");
 let comment = document.getElementById("comment");
 let msg = document.getElementById("msg");
 let card = document.getElementById("card");
-// let add = document.getElementById("add");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     formValidation();
 });
 
-// Validation messages
+//Data validation
 
 let formValidation = () => {
     if (title.value === "" || author.value === "") {
@@ -26,14 +25,12 @@ let formValidation = () => {
         console.log("success");
         msg.innerHTML = "¡Libro agregado!";
         acceptData();
-
     }
 
     setTimeout(() => msg.innerHTML = "", 5000)
 };
 
-//Create and read: 
-//Adding new books by title, author and comment
+//Read data
 
 let data = [{}];
 
@@ -45,23 +42,24 @@ let acceptData = () => {
     });
 
     localStorage.setItem("data", JSON.stringify(data));
-
     console.log(data);
     createBook();
 };
+
+//Create new element
 
 let createBook = () => {
     card.innerHTML = "";
     data.map((x, y) => {
         return (card.innerHTML += `
-    <div id=${y} class="box">
+    <div id=${y}>
           <h4>${x.title}</h4>
           <i>${x.author}</i>
           <p>${x.comment}</p>
   
-          <span class="options">
-          <button onclick = editBook(this)>Editar</button>
-          <button onclick = deleteBook(this); function>Borrar</button>
+          <span>
+          <button class="editBtn" onclick = editBook(this)>Editar</button>
+          <button class="deleteBtn" onclick = deleteBook(this)>Borrar</button>
           </span>
         </div>
     `);
@@ -70,32 +68,24 @@ let createBook = () => {
     resetForm();
 };
 
-
-// Delete books's information
+// Delete elements
 
 let deleteBook = (e) => {
-
     let modal = document.getElementById('modal');
-    let closeModal = document.getElementById('close-button');
+    let closeModal = document.getElementById('closeBtn');
 
     e.parentElement.parentElement.remove();
     data.splice(e.parentElement.parentElement.id, 1);
     localStorage.setItem("data", JSON.stringify(data));
     console.log(data);
 
-    // msgconfirm.innerHTML = "LIBRO ELIMINADO"
-    // setTimeout(() => msgconfirm.innerHTML = "", 5000)
-
     modal.showModal();
-
     closeModal.addEventListener('click', () => {
         modal.close();
-    
-        })
+    })
 };
 
-
-//Update book's information
+//Update information
 
 let editBook = (e) => {
     let selectedBook = e.parentElement.parentElement;
@@ -104,11 +94,8 @@ let editBook = (e) => {
     author.value = selectedBook.children[1].innerHTML;
     comment.value = selectedBook.children[2].innerHTML;
 
-    // deleteBook(e);
-
     e.parentElement.parentElement.remove();
     data.splice(e.parentElement.parentElement.id, 1);
-
 };
 
 //Clear form

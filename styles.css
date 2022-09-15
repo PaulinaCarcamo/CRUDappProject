@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(-45deg, #4A4453, #B0A8BA, #7B7485, #BEA6A1);
+    background: linear-gradient(-45deg, rgb(74, 68, 83), rgb(176, 168, 186), rgb(123, 116, 133), rgb(190, 166, 161));
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
     height: 100%;
@@ -76,7 +76,7 @@ body {
     }
 }
 
-/* Aside element: Book information */
+/* Aside element: Book review */
 
 .aside {
     background-color: rgba(255, 255, 255, 0.5);
@@ -88,11 +88,6 @@ body {
     font-size: 18px;
 }
 
-.aside span {
-    font-size: 20px;
-    margin-right: 20px;
-}
-
 @media only screen and (max-width: 600px),
 (max-width: 768px),
 (max-width: 992px) {
@@ -102,18 +97,21 @@ body {
     }
 }
 
+.aside span {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
 @media only screen and (max-width: 600px),
 (max-width: 768px),
 (max-width: 992px) {
     .aside span {
         display: block;
-
-
     }
 }
 
 .aside img {
-    width: 12%;
+    width: 150px;
     float: left;
     margin-right: 20px;
     border-radius: 50%;
@@ -139,7 +137,17 @@ body {
     border-radius: 25px;
 }
 
-.panel h1, h2 {
+@media only screen and (max-width: 600px),
+(max-width: 768px),
+(max-width: 992px) {
+    .panel {
+        padding: 10px 0px 0px 0px;
+        margin: 0px;
+    }
+}
+
+.panel h1,
+h2 {
     text-indent: 30px;
     text-shadow: 2px 2px 2px rgb(255, 255, 255);
 }
@@ -148,15 +156,6 @@ body {
     margin-top: 0px;
     text-align: center;
     text-shadow: 2px 2px 2px rgb(255, 255, 255);
-}
-
-@media only screen and (max-width: 600px),
-(max-width: 768px),
-(max-width: 992px) {
-    .panel {
-        padding: 10px 0px 0px 0px;
-        margin: 0px;
-    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -168,7 +167,8 @@ body {
 /* Form: Title, author, comment */
 
 .form {
-    padding: 0px 80px 0px 20px;
+    padding-right: 80px;
+    padding-left: 20px;
 }
 
 .form .label {
@@ -186,22 +186,28 @@ input {
     box-sizing: content-box;
 }
 
-/* Button: Save */
+/* Button: Save element */
 
 .saveBtn {
-    background-color: rgba(160, 160, 160, 0.5);
-    color: rgb(0, 0, 0);
-    padding: 15px;
-    margin: 10px;
+    background-color: rgb(102, 91, 115);
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    padding: 15px 30px 15px 30px;
+    margin: 15px;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
     cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.saveBtn:hover {
+    background-color: rgba(160, 160, 160, 0.502);
+    transition: 0.3s;
 }
 
 /* Message: "Datos incompletos", "Libro agregado" */
 
 .msg {
-    background-color: rgba(255, 203, 112, 0.5);
     margin-left: 40px;
 }
 
@@ -215,7 +221,6 @@ input {
 /* Books added */
 
 .card {
-    /* background-color: rgb(255, 255, 255); */
     display: grid;
     grid-template-columns: 33.3% 33.3% 33.3%;
 }
@@ -234,7 +239,7 @@ input {
 }
 
 .card div {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 20px;
     margin: 10px;
     padding: 10px 5px 5px 5px;
@@ -260,107 +265,67 @@ input {
     }
 }
 
-/* table {
-    width: 98%;
-    table-layout: fixed;
-    background-color: rgba(255, 255, 255, 0.8);
-    margin: 0px 0px 20px 10px;
-    border-radius: 10px;
-    border-spacing: 0px 15px;
-}
-
-td {
-    font-size: 18px;
-} */
-
-
-/* Responsive table */
-
-/* @media only screen and (max-width: 600px),
-(max-width: 768px) and (max-width: 992px) {
-
-    table {
-        width: 100%;
-        margin: 0px;
-    } */
-
-/* Table headers hidden, for accesibility */
-/* .col {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-
-    tr {
-        display: block;
-        text-align: left;
-    } 
-
-    td {
-        display: block;
-        text-align: left;
-        border: none;
-        position: relative;
-        padding-left: 50%;
-    }
-
-    td:before {
-        position: absolute;
-        top: 10px;
-        left: 20px;
-        padding-right: 10px;
-        white-space: nowrap;
-    } */
-
-/* Label data: Title, author, comment */
-
-/* td:nth-of-type(1):before {
-        content: "Título";
-    }
-
-    td:nth-of-type(2):before {
-        content: "Autor";
-    }
-
-    td:nth-of-type(3):before {
-        content: "Comentario";
-    }
-
-    td:nth-of-type(4):before {
-        content: none;
-    }
-
-} */
-
 /* Buttons edit and delete */
 
-button {
-    background-color: rgba(160, 160, 160, 0.5);
+.editBtn {
+    background-color: rgb(215, 206, 225);
     color: rgb(0, 0, 0);
-    padding: 10px;
-    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    margin: 10px 0px 5px 5px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.editBtn:hover {
+    opacity: 0.5;
     transition: 0.3s;
 }
 
-button:hover {
-    background-color: rgb(225, 225, 225);
+.deleteBtn {
+    background-color: rgb(255, 136, 98);
+    color: rgb(0, 0, 0);
+    padding: 10px 20px 10px 20px;
+    margin: 10px 0px 5px 5px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.deleteBtn:hover {
+    opacity: 0.5;
+    transition: 0.3s;
 }
 
 /* Modal: "Continue" message when deleting elements */
 
-.modal{
-    text-align: center;
+.modal {
+    padding: 30px;
     border-radius: 30px;
     border: none;
     box-shadow: 0 0 50px rgb(0, 0, 0);
-    padding: 30px;
+    text-align: center;
 }
 
-.modal button {
-    background-color: rgb(255, 164, 135);
+@media only screen and (max-width: 600px) {
+    .modal {
+        padding: 35px 12px 20px 12px;
+    }
+}
+
+.closeBtn {
+    background-color: rgb(99, 186, 171);
+    color: rgb(0, 0, 0);
+    padding: 15px 25px 15px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Footer section */
@@ -376,13 +341,13 @@ footer {
 
 /* Footer links (for more information) */
 
-.moreinfo a {
+.links a {
     margin: 0px 5px 0px 5px;
     text-decoration: none;
     color: rgb(120, 120, 120);
 }
 
-.moreinfo a:hover {
+.links a:hover {
     color: rgb(225, 225, 225);
     transition: 0.3s;
 }
@@ -390,20 +355,20 @@ footer {
 @media only screen and (max-width: 600px),
 (max-width: 768px),
 (max-width: 992px) {
-    .moreinfo a {
+    .links a {
         display: block;
         padding: 5px;
     }
 }
 
-.moreinfo .inactive {
+.links .inactive {
     pointer-events: none;
 }
 
 @media only screen and (max-width: 600px),
 (max-width: 768px),
 (max-width: 992px) {
-    .moreinfo .inactive {
+    .links .inactive {
         display: none;
     }
 }
